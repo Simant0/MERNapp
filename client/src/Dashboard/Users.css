@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.users {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.users button {
+  padding: 10px;
+  border: 2px solid green;
+  color: green;
+  cursor: pointer;
+}
+
+.users button:hover {
+  transform: scale(1.1);
+}
+
+.users__card {
+  padding: 10px;
+}
+
+.otherCard {
+  border: 2px solid rgb(255, 174, 0);
+  background-color: rgb(237, 253, 200);
+  padding: 20px;
+  margin: 10px;
+}
+
+.adminCard {
+  border: 2px solid rgb(0, 183, 255);
+  background-color: rgb(150, 216, 241);
+  padding: 20px;
+  margin: 10px;
+}
+.users__card button {
+  border: 2px solid red;
+  color: red;
+  background-color: rgba(252, 147, 147, 0.301);
+}
+
+.users__add {
+  width: 80%;
+  max-width: 700px;
+  margin: 10px;
+}
+
+.users__addForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.users__addFormButtons {
+  display: flex;
+}
+
+.submitButton {
+  margin: 2px;
+}
+
+.closeButton {
+  margin: 2px;
+}
+
+.closeButton button {
+  color: red;
+  border: 2px solid red;
+}
+
+.users__display {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.role {
+  display: flex;
+}

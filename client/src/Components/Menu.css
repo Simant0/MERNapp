@@ -1,0 +1,75 @@
+.Menu {
+  padding: 10px;
+  margin: 0;
+  height: auto;
+}
+
+.MenuToggle {
+  color: white;
+}
+
+.MenuBox {
+  width: 100vw;
+  height: 93vh;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+  background-color: black;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  left: 0px;
+  top: 60px;
+  transform: translateX(-100px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.5s;
+}
+
+.MenuBox.active {
+  opacity: 0.8;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.MenuList {
+  height: 100%vh;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 1.5em;
+  color: white;
+}
+
+.MenuList .row a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.MenuList .row .active {
+  background-color: rgb(53, 54, 54);
+  border-bottom: 5px ridge rgb(255, 11, 11);
+  color: rgb(240, 197, 8);
+}
+
+.MenuList .row {
+  object-position: center;
+  padding: 0;
+  margin: 0;
+}
+
+.MenuList .row a:hover {
+  cursor: pointer;
+  background-color: rgb(58, 59, 59);
+}
+
+.MenuSocialMedia a {
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+}

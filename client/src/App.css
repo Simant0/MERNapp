@@ -1,0 +1,124 @@
+@media screen and (min-width: 8px) and (max-width: 800px) {
+  .App {
+    flex-direction: column;
+  }
+}
+
+.App {
+  display: flex;
+}
+
+@media screen and (min-width: 8px) and (max-width: 800px) {
+  .App__home {
+    margin-left: 0;
+  }
+
+  .App__aboutus {
+    margin-left: 0;
+    margin-top: 60px;
+  }
+
+  .App__menu {
+    margin-left: 0;
+    margin-top: 60px;
+  }
+
+  .App__order {
+    margin-left: 0;
+    margin-top: 60px;
+  }
+
+  .App__control {
+    margin-left: 0;
+    margin-top: 60px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .App__home {
+    margin-left: 280px;
+    width: 100%;
+  }
+
+  .App__aboutus {
+    margin-left: 280px;
+    width: 100%;
+  }
+
+  .App__menu {
+    margin-left: 280px;
+    width: 100%;
+  }
+
+  .App__order {
+    margin-left: 280px;
+    width: 100%;
+  }
+
+  .App__control {
+    margin-left: 280px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .App__home {
+    margin-left: 350px;
+  }
+
+  .App__aboutus {
+    margin-left: 350px;
+    width: 100%;
+  }
+
+  .App__menu {
+    margin-left: 350px;
+    width: 100%;
+  }
+
+  .App__order {
+    margin-left: 350px;
+    width: 100%;
+  }
+
+  .App__control {
+    margin-left: 350px;
+    width: 100%;
+  }
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(238, 215, 4);
+  background-color: rgb(234, 236, 230);
+  color: rgb(131, 4, 4);
+}
+
+label {
+  font-size: 25px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid rgb(0, 195, 255);
+  padding: 5px;
+  outline: none;
+  background-color: rgba(245, 243, 245, 0);
+}
+
+select {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+}

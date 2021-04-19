@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 20px;
+  margin: 50px;
+}
+
+.login h1 {
+  width: 100%;
+  padding: 20px;
+  background-color: black;
+  color: red;
+}
+
+.login button {
+  background-color: green;
+  width: 80px;
+  height: 50px;
+  font-size: 20px;
+  color: yellow;
+  border: 1px solid black;
+}
+
+.login button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

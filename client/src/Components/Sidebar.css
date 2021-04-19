@@ -1,0 +1,156 @@
+@media screen and (min-width: 8px) and (max-width: 800px) {
+  .Sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    /* position: sticky; */
+  }
+
+  .SidebarList {
+    display: none;
+  }
+
+  .SidebarSocialMedia {
+    display: none;
+  }
+
+  .SidebarLogo {
+    height: 60px;
+    width: 100px;
+  }
+
+  .SidebarMenu {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Sidebar {
+    width: 280px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-around;
+    border-right: 0.5px solid white;
+  }
+
+  .SidebarList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .SidebarLogo {
+    height: auto;
+    width: auto;
+  }
+
+  .SidebarSocialMedia {
+    display: flex;
+  }
+
+  .SidebarMenu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .Sidebar {
+    width: 350px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-around;
+    border-right: 0.5px solid white;
+  }
+  .SidebarList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .SidebarLogo {
+    height: auto;
+    width: auto;
+  }
+
+  .SidebarSocialMedia {
+    display: flex;
+  }
+
+  .SidebarMenu {
+    display: none;
+  }
+}
+
+.Sidebar {
+  /*height: 100%;
+  /*width: 300px;*/
+  background-color: rgb(0, 0, 0);
+  padding: 0;
+  margin: 0;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  position: fixed;
+  transition: 0.3s;
+  /* overflow: hidden; */
+
+  /*
+  flex-direction: column;
+  justify-content: space-around;
+  border-right: 1px solid rgb(220, 243, 8);*/
+}
+
+.SidebarLogo {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.SidebarSocialMedia a {
+  margin: 0;
+  padding: 0;
+  /*display: flex;*/
+  color: white;
+}
+
+.SidebarList {
+  height: 100%vh;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 1.5em;
+  color: white;
+}
+
+.SidebarList .row a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  margin: 0;
+  transition: 0.3s;
+}
+
+.SidebarList .row .active {
+  /* background-color: rgb(33, 34, 34); */
+  border-left: 5px solid rgb(240, 8, 8);
+  color: rgb(240, 197, 8);
+}
+
+.SidebarList .row {
+  display: flex;
+  object-position: center;
+  padding: 0;
+}
+
+.rowInside {
+  display: flex;
+}
+
+.SidebarList .row a:hover {
+  cursor: pointer;
+  color: rgb(240, 197, 8);
+}
+
+.orderCount {
+  color: red;
+}

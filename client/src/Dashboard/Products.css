@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.submitButton button {
+  padding: 5px;
+  color: green;
+  border: 2px solid green;
+  cursor: pointer;
+}
+
+.closeButton button {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.products__add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.products__addButtons button {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 2px solid green;
+  color: green;
+  cursor: pointer;
+}
+
+.products__addButtons button:hover {
+  transform: scale(1.1);
+}
+
+.products__modal {
+  width: 80%;
+  max-width: 700px;
+}
+
+.products__display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.products__card {
+  display: flex;
+
+  flex-direction: column;
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.products__card button {
+  padding: 10px;
+  color: red;
+  background-color: rgba(219, 212, 212, 0.041);
+  border: 2px solid red;
+  cursor: pointer;
+}
+
+.products__card button:hover {
+  transform: scale(1.1);
+}
+
+.products__cardImg {
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.products__cardImg img {
+  width: 100%;
+}
+
+.ffCard {
+  background-color: rgb(252, 231, 42);
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hCard {
+  background-color: rgb(114, 218, 18);
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.gCard {
+  background-color: rgb(90, 199, 250);
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.gfCard {
+  background-color: rgb(252, 161, 42);
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+}

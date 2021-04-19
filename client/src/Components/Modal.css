@@ -1,0 +1,14 @@
+.modal {
+  border: 1px solid black;
+  width: 100%;
+  padding: 10px;
+}
+
+.modal__buttons button {
+  color: red;
+  border: 3px solid red;
+}
+
+.modal__buttons button:hover {
+  transform: scale(1.1);
+}

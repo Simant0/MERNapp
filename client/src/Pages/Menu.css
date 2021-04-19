@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* section {
+  height: 100%;
+} */
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__heading {
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.menu__upper {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+}
+
+.menu__lower {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+}
+
+@media screen and (min-width: 1080px) {
+  .menu__upper {
+    flex-direction: row;
+  }
+
+  .menu__lower {
+    flex-direction: row;
+  }
+}
+
+.menu__fastfood {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.menu__healthy {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.menu__getCooking {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.Heading {
+  width: 100%;
+
+  text-align: center;
+
+  background-color: black;
+  color: yellow;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.menu__healthy .Heading {
+  color: rgb(7, 209, 7);
+}
+
+.Intro {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.Products {
+  width: 100%;
+  display: flex;
+}
+
+.Product {
+  width: 100%;
+}
+
+.menu__getCooking {
+  flex-direction: column;
+}
+
+.menu__getCookingIntro {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu__getCookingIntro ul {
+  padding: 10px;
+}
+
+.menu__getCookingFF {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.menu__getCookingFF Heading {
+  width: 100%;
+  text-align: center;
+}
+
+.menu__getCookingMenu {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.menu__getCookingMenu Heading {
+  width: 100%;
+  text-align: center;
+}
+
+.goToOrder {
+  background-color: black;
+  display: flex;
+  text-align: center;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+.goToOrderBox {
+  padding-top: 10px;
+}
+
+.goToOrderBox:hover {
+  transform: scale(1.3);
+}
+
+.goToOrderBox a {
+  text-decoration: none;
+  color: white;
+}
+
+.goToOrderBox a:hover {
+  transform: scale(1.1);
+  color: green;
+}

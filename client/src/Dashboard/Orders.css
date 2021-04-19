@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.orders__search {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.orders__search button {
+  margin: 2px;
+  padding: 2px;
+  color: green;
+  border: 2px solid green;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.orders__search button:hover {
+  transform: scale(1.1);
+}
+
+.orders__tab {
+  display: flex;
+}
+
+.orders__tab button {
+  height: 50px;
+  width: 100px;
+}
+
+.orders__card {
+  border: 1px solid black;
+  max-width: 500px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.orders__ordered {
+  background-color: rgb(209, 6, 6);
+  padding: 10px;
+}
+
+.orders__cooking {
+  background-color: rgb(245, 163, 10);
+  padding: 10px;
+}
+
+.orders__delivery {
+  background-color: rgb(177, 7, 126);
+  padding: 10px;
+}
+
+.orders__completed {
+  background-color: rgb(4, 129, 4);
+  padding: 10px;
+}
+
+.orders__cardButtons button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.63);
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.orders__cardButtons button:hover {
+  font-size: 15px;
+  background-color: rgba(232, 232, 243, 0.678);
+}
+
+.orders__display {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.deleteButton button {
+  border: 4px solid red;
+  color: red;
+}
+
+.ffOrder {
+  background-color: rgb(247, 201, 53);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 5px;
+  margin: 2px;
+  align-items: flex-start;
+}
+
+.hOrder {
+  background-color: rgb(114, 218, 18);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 5px;
+  margin: 2px;
+  align-items: flex-start;
+}
+
+.gOrder {
+  background-color: rgb(90, 199, 250);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 5px;
+  margin: 2px;
+  align-items: flex-start;
+}
+
+.gfOrder {
+  background-color: rgb(252, 161, 42);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 5px;
+  margin: 2px;
+  align-items: flex-start;
+}

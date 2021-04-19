@@ -1,0 +1,8 @@
+Full stack web app development using
+M : Mongodb as the database (NoSql)
+E : Express framework for the serverside prgramming
+R: React framework for the client side programming
+N: Nodejs as the programming language
+
+An application for restaurant with online ordering and delivery service.
+Hosting in a container using docker.
