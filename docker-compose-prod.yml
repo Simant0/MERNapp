@@ -21,15 +21,6 @@ services:
     networks:
       - mern-app
 
-  mongo:
-    image: mongo:4.4-bionic
-    ports:
-      - "27017:27017"
-    networks:
-      - mern-app
-    volumes:
-      - mongo-data:/data/db
-
 networks:
   mern-app:
     driver: bridge
@@ -38,6 +29,4 @@ volumes:
   caddy-data:
     driver: local
   caddy-config:
-    driver: local
-  mongo-data:
     driver: local
