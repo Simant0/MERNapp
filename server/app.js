@@ -12,11 +12,18 @@ const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 const userRoutes = require("./api/routes/users");
 
-const connectionString = process.env.MONGO_URI
+const connectionString = process.env.MONGO_URI;
 
 //'mongodb://mongo:27017/store'
 
-mongoose.connect( connectionString, { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose
+  .connect(connectionString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .catch((err) => {
+    console.log(error);
+  });
 
 // connect to the database
 /**mongoose.connect(

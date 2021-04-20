@@ -183,6 +183,46 @@ function Order() {
     }
   };
 
+  const handleSubmitNoKhalti = (event) => {
+    // on submit
+    event.preventDefault();
+
+    if (basket.length > 0 && delivery !== "Select") {
+      axios
+        .post("/orders", {
+          name: orderName,
+          address: delivery,
+          phone: phone,
+          price: getBasketTotal(basket),
+          items: basket,
+        })
+        .then((response) => {
+          console.log("ordered");
+          const orderId = response.data._id;
+          localStorage.setItem("orderId", JSON.stringify(response.data._id));
+          setgotOrderId(orderId);
+          alert.success("ordered Please save orderid");
+
+          dispatch({
+            type: "EMPTY_BASKET",
+          });
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+      localStorage.setItem("orderId", JSON.stringify(gotOrderId));
+      localStorage.setItem("orderName", JSON.stringify(orderName));
+      localStorage.setItem("phone", JSON.stringify(phone));
+    } else {
+      if (basket.length < 1) {
+        alert.error("please add items to the basket");
+      } else {
+        alert.error("please select a drop off point");
+      }
+    }
+  };
+
   const toggleTab = (index) => {
     setactiveTab(index);
   };
@@ -193,7 +233,7 @@ function Order() {
         <h1>Order</h1>
         Your order id: {gotOrderId}
       </div>
-      
+
       <div className="order__tab">
         <div className="order__tabHeading">
           <div className={activeTab === 0 ? "tabs activeTab" : "tabs"}>
@@ -211,7 +251,6 @@ function Order() {
             <div className="placeOrder">
               <h2>Place your order </h2>
               Minimum order of Rs: {minDelivery}
-
               <form onSubmit={handleSubmitPO}>
                 <label>
                   Name{""}
@@ -294,21 +333,17 @@ function Order() {
               <div className="payButton">
                 <button
                   onClick={() => {
-                    if(getBasketTotal(basket) > minDelivery )
-                    {
-                      handleKhalti();
+                    if (getBasketTotal(basket) > minDelivery) {
+                      //handleKhalti();
+                      handleSubmitNoKhalti();
+                    } else {
+                      alert.error("Minimum order is " + minDelivery);
                     }
-                    else
-                    {
-                      alert.error("Minimum order is " + minDelivery)
-                    }
-                    
                   }}
                 >
-                  Pay with Khalti
+                  Order
                 </button>
               </div>
-
               <div>
                 Your Order id is :
                 <div className="copyOrderId">
