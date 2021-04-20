@@ -244,7 +244,7 @@ function Products(props) {
             }
           >
             <div className="products__cardImg">
-              <img src={`http://localhost:5000/${product.image}`} alt="" />
+              <img src={`http://45.56.73.20:5000/${product.image}`} alt="" />
             </div>
             <div>{product.name} </div>
             <div>price: {product.price} </div>

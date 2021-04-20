@@ -25,7 +25,7 @@ function ProductCard({ id, name, image, price, info, type }) {
   return (
     <div className="product">
       <div className="product__image">
-        <img src={`http://localhost:5000/${image}`} alt="" />
+        <img src={`http://45.56.73.20:5000/${image}`} alt="" />
         <div className="product__name">{name}</div>
       </div>
 
