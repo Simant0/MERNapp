@@ -97,10 +97,20 @@ router.post("/login", (req, res, next) => {
 
 //get users count
 router.get("/count", (req, res, next) => {
-  var c = User.length;
-  res.status(200).json({
-    count: c,
-  });
+  User.find()
+    .select("email")
+    .exec()
+    .then((docs) => {
+      var c = docs.length;
+      res.status(200).json({
+        count: c,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        error: err,
+      });
+    });
 });
 
 //get all users
