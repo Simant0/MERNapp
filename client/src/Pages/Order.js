@@ -37,38 +37,6 @@ function Order() {
   const [delivery, setdelivery] = useState("Select");
   const [gotOrderId, setgotOrderId] = useState();
 
-  let khaltiConfig = {
-    publicKey: "test_public_key_dc74e0fd57cb46cd93832aee0a390234",
-    productIdentity: "1234567890",
-    productName: "99FudOrder",
-    productUrl: "http://99fud.com",
-    eventHandler: {
-      onSuccess(payload) {
-        // hit merchant api for initiating verfication
-        handleSubmitPO(payload.token);
-        console.log(payload);
-      },
-      // onError handler is optional
-      onError(error) {
-        // handle errors
-        console.log(error);
-        alert.error(error);
-      },
-      onClose() {
-        console.log("widget is closing");
-      },
-    },
-    paymentPreference: [
-      "KHALTI",
-      "EBANKING",
-      "MOBILE_BANKING",
-      "CONNECT_IPS",
-      "SCT",
-    ],
-  };
-
-  let khaltiCheckout = new KhaltiCheckout(khaltiConfig);
-
   useEffect(() => {
     let localId = localStorage.getItem("orderId");
     let localName = localStorage.getItem("orderName");
@@ -90,12 +58,6 @@ function Order() {
       setphone(localPhone);
     }
   }, []);
-
-  const handleKhalti = () => {
-    let price = getBasketTotal(basket);
-    price = price * 100; // convert Rs to paisa
-    khaltiCheckout.show({ amount: price });
-  };
 
   const handleSubmitOS = (event) => {
     // on submit
@@ -141,48 +103,6 @@ function Order() {
     }
   };
 
-  const handleSubmitPO = (ktoken) => {
-    // // on submit
-    // event.preventDefault();
-
-    if (basket.length > 0 && delivery !== "Select") {
-      axios
-        .post("/api/orders", {
-          name: orderName,
-          address: delivery,
-          phone: phone,
-          price: getBasketTotal(basket),
-          items: basket,
-          token: ktoken,
-        })
-        .then((response) => {
-          console.log("ordered");
-          const orderId = response.data._id;
-          localStorage.setItem("orderId", JSON.stringify(response.data._id));
-          setgotOrderId(orderId);
-          alert.success("ordered Please save orderid");
-
-          dispatch({
-            type: "EMPTY_BASKET",
-          });
-        })
-        .catch(function (error) {
-          console.log(error);
-          alert.error(error);
-        });
-
-      localStorage.setItem("orderId", JSON.stringify(gotOrderId));
-      localStorage.setItem("orderName", JSON.stringify(orderName));
-      localStorage.setItem("phone", JSON.stringify(phone));
-    } else {
-      if (basket.length < 1) {
-        alert.error("please add items to the basket");
-      } else {
-        alert.error("please select a drop off point");
-      }
-    }
-  };
-
   const handleSubmitNoKhalti = (event) => {
     // on submit
     event.preventDefault();
@@ -195,6 +115,7 @@ function Order() {
           phone: phone,
           price: getBasketTotal(basket),
           items: basket,
+          token: "test",
         })
         .then((response) => {
           console.log("ordered");
