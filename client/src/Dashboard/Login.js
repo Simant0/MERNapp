@@ -52,7 +52,6 @@ export default function Login({ setToken }) {
 
         <button type="submit"> Log in</button>
       </form>
-      {createAccButton()}
     </div>
   );
 }
