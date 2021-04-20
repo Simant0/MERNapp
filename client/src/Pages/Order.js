@@ -294,43 +294,44 @@ function Order() {
                   </select>
                 </label>
 
-                {/* <div className="placeOrderButton">
+                <div className="order__cart">
+                  {basket?.length === 0 ? (
+                    <div>
+                      <h3>Your basket is empty</h3>
+                      <p>Add items from the menu. </p>
+                      <div className="menuButton">
+                        <NavLink to="/menu">
+                          <button> See Menu</button>
+                        </NavLink>
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <h3> your order items</h3>
+                      <h3> total items: {basket.length}</h3>
+
+                      {basket.map((val, key) => (
+                        <Cart
+                          key={key}
+                          id={val.id}
+                          name={val.name}
+                          price={val.price}
+                          type={val.type}
+                        />
+                      ))}
+
+                      <div className="subtotal">
+                        subtotal:Rs {getBasketTotal(basket)}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="placeOrderButton">
                   <button type="submit"> Place Order</button>
-                </div> */}
+                </div>
               </form>
-              <div className="order__cart">
-                {basket?.length === 0 ? (
-                  <div>
-                    <h3>Your basket is empty</h3>
-                    <p>Add items from the menu. </p>
-                    <div className="menuButton">
-                      <NavLink to="/menu">
-                        <button> See Menu</button>
-                      </NavLink>
-                    </div>
-                  </div>
-                ) : (
-                  <div>
-                    <h3> your order items</h3>
-                    <h3> total items: {basket.length}</h3>
-
-                    {basket.map((val, key) => (
-                      <Cart
-                        key={key}
-                        id={val.id}
-                        name={val.name}
-                        price={val.price}
-                        type={val.type}
-                      />
-                    ))}
-
-                    <div className="subtotal">
-                      subtotal:Rs {getBasketTotal(basket)}
-                    </div>
-                  </div>
-                )}
-              </div>
-              <div className="payButton">
+              {/* <div className="payButton">
                 <button
                   onClick={() => {
                     if (getBasketTotal(basket) > minDelivery) {
@@ -343,7 +344,7 @@ function Order() {
                 >
                   Order
                 </button>
-              </div>
+              </div> */}
               <div>
                 Your Order id is :
                 <div className="copyOrderId">
