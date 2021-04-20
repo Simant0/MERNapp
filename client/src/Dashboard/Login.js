@@ -8,19 +8,7 @@ import { useAlert } from "react-alert";
 export default function Login({ setToken }) {
   const [username, setUsername] = useState();
   const [password, setpassword] = useState();
-  const [userCount, setUserCount] = useState();
   const alert = useAlert();
-
-  useEffect(() => {
-    axios
-      .get("/api/users/count")
-      .then((res) => {
-        setUserCount(res.data.count);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -37,45 +25,6 @@ export default function Login({ setToken }) {
         alert.error("login failed");
         console.log(error);
       });
-  };
-
-  const createAccount = () => {
-    axios
-      .post("/api/users/signup", {
-        username: "admin",
-        email: "admin@99fud.com",
-        password: "admin123",
-        role: "admin",
-      })
-      .then((res) => {
-        if (res.status === 201) {
-          alert.success("new user created");
-        } else {
-          alert.error("add user failed");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        alert.error("add user failed");
-      });
-  };
-
-  const createAccButton = () => {
-    if (!(userCount > 0)) {
-      return (
-        <div className="newAccount">
-          <button
-            onClick={() => {
-              createAccount();
-            }}
-          >
-            create Account
-          </button>
-        </div>
-      );
-    } else {
-      return <div></div>;
-    }
   };
 
   return (
