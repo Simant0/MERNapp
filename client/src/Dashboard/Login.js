@@ -36,11 +36,44 @@ export default function Login({ setToken }) {
       });
   };
 
-  const createAcc = () => {
+  const createAccount = () => {
+    axios
+      .post("/api/users/signup", {
+        username: username,
+        email: "admin@99fud.com",
+        password: password,
+        role: "admin",
+      })
+      .then((res) => {
+        if (res.status === 201) {
+          alert.success("new user created");
+          clearForm();
+        } else {
+          alert.error("add user failed");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert.error("add user failed");
+      });
+  };
+
+  const createAccButton = () => {
     if (!(userCount > 0)) {
-      return <div>create new Account</div>;
+      return (
+        <div className="newAccount">
+          create new Account
+          <button
+            onClick={() => {
+              createAccount();
+            }}
+          >
+            create Account
+          </button>
+        </div>
+      );
     } else {
-      return <div>Accounts = {userCount}</div>;
+      return <div></div>;
     }
   };
 
@@ -69,7 +102,7 @@ export default function Login({ setToken }) {
 
         <button type="submit"> Log in</button>
       </form>
-      {createAcc()}
+      {createAccButton()}
     </div>
   );
 }
