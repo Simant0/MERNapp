@@ -61,10 +61,9 @@ export default function Login({ setToken }) {
     if (!(userCount > 0)) {
       return (
         <div className="newAccount">
-          create new Account
           <button
             onClick={() => {
-              createAccount();
+              createAccount;
             }}
           >
             create Account

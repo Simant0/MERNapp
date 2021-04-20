@@ -41,6 +41,7 @@ label {
 }
 
 .newAccount button {
-  background-color: rgb(69, 164, 241);
+  background-color: rgb(5, 52, 90);
   color: white;
+  border: 1px solid black;
 }
