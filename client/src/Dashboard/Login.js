@@ -3,11 +3,13 @@ import { useState } from "react";
 import "./Login.css";
 import PropTypes from "prop-types";
 import axios from "axios";
+import { useAlert } from "react-alert";
 
 export default function Login({ setToken }) {
   const [username, setUsername] = useState();
   const [password, setpassword] = useState();
   const [userCount, setUserCount] = useState();
+  const alert = useAlert();
 
   useEffect(() => {
     axios
@@ -32,11 +34,13 @@ export default function Login({ setToken }) {
         localStorage.setItem("token", JSON.stringify(response.data.token));
       })
       .catch(function (error) {
+        alert.error("login failed");
         console.log(error);
       });
   };
 
-  const createAccount = () => {
+  const createAccount = (event) => {
+    event.preventDefault();
     axios
       .post("/api/users/signup", {
         username: username,
@@ -63,7 +67,7 @@ export default function Login({ setToken }) {
         <div className="newAccount">
           <button
             onClick={() => {
-              createAccount;
+              createAccount();
             }}
           >
             create Account
