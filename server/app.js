@@ -16,25 +16,23 @@ const connectionString = process.env.MONGO_URI;
 
 //'mongodb://mongo:27017/store'
 
-mongoose
-  .connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .catch((err) => {
-    console.log(error);
-  });
+// mongoose
+//   .connect(connectionString, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .catch((err) => {
+//     console.log(error);
+//   });
 
 // connect to the database
-/**mongoose.connect(
-  "mongodb+srv://root:" +
-    process.env.MONGO_ATLAS_PW +
-    "@test-cluster.jc33v.mongodb.net/test-cluster?retryWrites=true&w=majority",
+mongoose.connect(
+  "mongodb+srv://root:toor@test-cluster.jc33v.mongodb.net/test-cluster?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
-);*/
+);
 mongoose.Promise = global.Promise;
 
 //
