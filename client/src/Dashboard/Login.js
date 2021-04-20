@@ -47,7 +47,6 @@ export default function Login({ setToken }) {
       .then((res) => {
         if (res.status === 201) {
           alert.success("new user created");
-          clearForm();
         } else {
           alert.error("add user failed");
         }
