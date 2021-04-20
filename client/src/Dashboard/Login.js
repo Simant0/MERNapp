@@ -39,8 +39,7 @@ export default function Login({ setToken }) {
       });
   };
 
-  const createAccount = (event) => {
-    event.preventDefault();
+  const createAccount = () => {
     axios
       .post("/api/users/signup", {
         username: username,
