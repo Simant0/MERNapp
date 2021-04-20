@@ -251,7 +251,7 @@ function Order() {
             <div className="placeOrder">
               <h2>Place your order </h2>
               Minimum order of Rs: {minDelivery}
-              <form onSubmit={handleSubmitPO}>
+              <form onSubmit={handleSubmitNoKhalti}>
                 <label>
                   Name{""}
                   <input
