@@ -37,7 +37,7 @@ export default function Login({ setToken }) {
   };
 
   const createAcc = () => {
-    if (userCount == 0) {
+    if (!(userCount > 1)) {
       return <div>create new Account</div>;
     }
   };
