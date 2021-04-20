@@ -103,9 +103,9 @@ function Order() {
     }
   };
 
-  const handleSubmitNoKhalti = (event) => {
+  const handleSubmitNoKhalti = () => {
     // on submit
-    event.preventDefault();
+    // event.preventDefault();
 
     if (basket.length > 0 && delivery !== "Select") {
       axios
@@ -172,7 +172,11 @@ function Order() {
             <div className="placeOrder">
               <h2>Place your order </h2>
               Minimum order of Rs: {minDelivery}
-              <form onSubmit={handleSubmitNoKhalti}>
+              <form
+                onSubmit={(event) => {
+                  event.preventDefault();
+                }}
+              >
                 <label>
                   Name{""}
                   <input
@@ -215,9 +219,9 @@ function Order() {
                   </select>
                 </label>
 
-                <div className="placeOrderButton">
+                {/* <div className="placeOrderButton">
                   <button type="submit"> Place Order</button>
-                </div>
+                </div> */}
               </form>
               <div className="order__cart">
                 {basket?.length === 0 ? (
@@ -251,7 +255,7 @@ function Order() {
                   </div>
                 )}
               </div>
-              {/* <div className="payButton">
+              <div className="payButton">
                 <button
                   onClick={() => {
                     if (getBasketTotal(basket) > minDelivery) {
@@ -264,7 +268,7 @@ function Order() {
                 >
                   Order
                 </button>
-              </div> */}
+              </div>
               <div>
                 Your Order id is :
                 <div className="copyOrderId">
