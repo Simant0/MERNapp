@@ -108,7 +108,7 @@ router.get("/count", (req, res, next) => {
     })
     .catch((err) => {
       res.status(500).json({
-        error: err,
+        count: 0,
       });
     });
 });
