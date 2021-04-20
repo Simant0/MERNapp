@@ -7,29 +7,29 @@ const axios = require("axios");
 const Order = require("../models/order");
 const Product = require("../models/product");
 
-const verifyPayment = (amount, token) => {
-  let data = {
-    token: token,
-    amount: amount * 100,
-  };
+// const verifyPayment = (amount, token) => {
+//   let data = {
+//     token: token,
+//     amount: amount * 100,
+//   };
 
-  let config = {
-    headers: {
-      Authorization: "Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b",
-    },
-  };
+//   let config = {
+//     headers: {
+//       Authorization: "Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b",
+//     },
+//   };
 
-  axios
-    .post("https://khalti.com/api/v2/payment/verify/", data, config)
-    .then((response) => {
-      console.log(response.data);
-      return true;
-    })
-    .catch((error) => {
-      console.log(error);
-      return false;
-    });
-};
+//   axios
+//     .post("https://khalti.com/api/v2/payment/verify/", data, config)
+//     .then((response) => {
+//       console.log(response.data);
+//       return true;
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//       return false;
+//     });
+// };
 
 // get orders
 router.get("/", checkAuth, (req, res, next) => {
@@ -74,35 +74,44 @@ router.get("/", checkAuth, (req, res, next) => {
 
 // post order
 router.post("/", (req, res, next) => {
-  const verified = verifyPayment(req.body.price, req.body.token);
+  // const verified = verifyPayment(req.body.price, req.body.token);
 
-  if (verified) {
-    const order = new Order({
-      _id: mongoose.Types.ObjectId(),
-      name: req.body.name,
-      address: req.body.address,
-      phone: req.body.phone,
-      price: req.body.price,
-      items: req.body.items,
-      token: req.body.token,
-    });
+  // if (verified) {
+  //   const order = new Order({
+  //     _id: mongoose.Types.ObjectId(),
+  //     name: req.body.name,
+  //     address: req.body.address,
+  //     phone: req.body.phone,
+  //     price: req.body.price,
+  //     items: req.body.items,
+  //     token: req.body.token,
+  //   });
+  const order = new Order({
+    _id: mongoose.Types.ObjectId(),
+    name: req.body.name,
+    address: req.body.address,
+    phone: req.body.phone,
+    price: req.body.price,
+    items: req.body.items,
+    token: req.body.token,
+  });
 
-    order
-      .save()
-      .then((result) => {
-        console.log(result);
-        res.status(201).json(result);
-      })
-      .catch((err) => {
-        res.status(500).json({
-          error: err,
-        });
+  order
+    .save()
+    .then((result) => {
+      console.log(result);
+      res.status(201).json(result);
+    })
+    .catch((err) => {
+      res.status(500).json({
+        error: err,
       });
-  } else {
-    res.status(500).json({
-      error: "payment not verified",
     });
-  }
+  // } else {
+  //   res.status(500).json({
+  //     error: "payment not verified",
+  //   });
+  // // }
 });
 
 // get orderId

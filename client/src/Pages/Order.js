@@ -8,7 +8,6 @@ import { getBasketTotal } from "../reducer";
 import axios from "axios";
 import { useAlert } from "react-alert";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import KhaltiCheckout from "khalti-checkout-web";
 
 function Order() {
   const [activeTab, setactiveTab] = useState(0);
@@ -120,7 +119,6 @@ function Order() {
         .then((response) => {
           console.log("ordered");
           const orderId = response.data._id;
-          localStorage.setItem("orderId", JSON.stringify(response.data._id));
           setgotOrderId(orderId);
           alert.success("ordered Please save orderid");
 
