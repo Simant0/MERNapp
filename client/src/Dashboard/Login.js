@@ -39,8 +39,7 @@ export default function Login({ setToken }) {
       });
   };
 
-  const createAccount = (event) => {
-    event.preventDefault();
+  const createAccount = () => {
     axios
       .post("/api/users/signup", {
         username: "admin",
@@ -70,7 +69,7 @@ export default function Login({ setToken }) {
               createAccount();
             }}
           >
-            create initial Account
+            create Account
           </button>
         </div>
       );
@@ -82,7 +81,7 @@ export default function Login({ setToken }) {
   return (
     <div className="login">
       <h1> Employees Only</h1>
-      <form onSubmit={createAccount}>
+      <form onSubmit={handleSubmit}>
         <label>
           username:{""}
           <input
@@ -104,6 +103,7 @@ export default function Login({ setToken }) {
 
         <button type="submit"> Log in</button>
       </form>
+      {createAccButton()}
     </div>
   );
 }
