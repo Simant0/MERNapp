@@ -42,9 +42,9 @@ export default function Login({ setToken }) {
   const createAccount = () => {
     axios
       .post("/api/users/signup", {
-        username: username,
+        username: "admin",
         email: "admin@99fud.com",
-        password: password,
+        password: "admin123",
         role: "admin",
       })
       .then((res) => {
@@ -69,7 +69,7 @@ export default function Login({ setToken }) {
               createAccount();
             }}
           >
-            create Account
+            create initial Account
           </button>
         </div>
       );
