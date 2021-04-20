@@ -69,7 +69,7 @@ export default function Login({ setToken }) {
 
         <button type="submit"> Log in</button>
       </form>
-      {createAcc}
+      {createAcc()}
     </div>
   );
 }
