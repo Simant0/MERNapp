@@ -38,15 +38,15 @@ function Order() {
   const [gotOrderId, setgotOrderId] = useState();
 
   useEffect(() => {
-    let localId = localStorage.getItem("orderId");
+    // let localId = localStorage.getItem("orderId");
     let localName = localStorage.getItem("orderName");
     let localPhone = localStorage.getItem("phone");
-    if (localId) {
-      localId = JSON.parse(localId);
+    // if (localId) {
+    //   localId = JSON.parse(localId);
 
-      setgotOrderId(localId);
-      setorderStatusId(localId);
-    }
+    //   setgotOrderId(localId);
+    //   setorderStatusId(localId);
+    // }
 
     if (localName) {
       localName = JSON.parse(localName);
