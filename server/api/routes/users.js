@@ -95,6 +95,14 @@ router.post("/login", (req, res, next) => {
     });
 });
 
+//get users count
+router.get("/count", (req, res, next) => {
+  var c = User.length;
+  res.status(200).json({
+    count: c,
+  });
+});
+
 //get all users
 router.get("/", checkAuth, (req, res, next) => {
   const { role } = req.userData;
